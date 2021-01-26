@@ -8,7 +8,8 @@ module.exports = (req, res, next) => {
       if (err) {
         res.status(401).json('we wantz VALID token')
       } else {
-        
+        req.decodedJwt = decoded
+        next()
       }
     })
   } else {
