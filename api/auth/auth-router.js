@@ -40,6 +40,7 @@ router.post("/login", (req, res) => {
         // compare the password the hash stored in the database
         if (user && bcryptjs.compareSync(password, user.password)) {
           // build token and send it back
+          const token = generateToken(user)
           res.status(200).json({ message: "Welcome to our API" });
         } else {
           res.status(401).json({ message: "Invalid credentials" });
@@ -65,7 +66,7 @@ function generateToken(user) {
     expiresIn: '1d',
   }
 
-  return jwt.sign()
+  return jwt.sign(payload, 'shh', options)
 }
 
 module.exports = router;
