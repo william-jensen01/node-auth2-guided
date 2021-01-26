@@ -55,6 +55,10 @@ router.post("/login", (req, res) => {
   }
 });
 
-function generateToken()
+function generateToken(user) {
+  const payload = {
+    subject: us
+  }
+}
 
 module.exports = router;
