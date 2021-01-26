@@ -63,7 +63,7 @@ function generateToken(user) {
     role: user.role,
   }
   const options = {
-    expiresIn: '1s',
+    expiresIn: 10,
   }
 
   return jwt.sign(payload, jwtSecret, options)
