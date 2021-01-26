@@ -62,8 +62,10 @@ function generateToken(user) {
     role: user.role,
   }
   const options = {
-    expiresIn '',
+    expiresIn: '1d',
   }
+
+  return jwt.sign()
 }
 
 module.exports = router;
