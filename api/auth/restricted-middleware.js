@@ -6,7 +6,9 @@ module.exports = (req, res, next) => {
   if (token) {
     jwt.verify(token, jwtSecret, (err, decoded) => {
       if (err) {
-        res.status(401)
+        res.status(401).json('we wantz VALID token')
+      } else {
+        
       }
     })
   } else {
